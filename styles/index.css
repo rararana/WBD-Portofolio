@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Cardo", serif;
   background-color: #f8f6f0;
@@ -18,13 +22,13 @@ nav {
 
 nav .menu {
   display: flex;
-  gap: 50px;
+  gap: 30px;
 }
 
 nav a {
   text-decoration: none;
   color: #364c84;
-  font-size: 14px;
+  font-size: small;
   font-weight: 500;
   letter-spacing: 1px;
   transition: transform 0.2s ease;
@@ -66,4 +70,82 @@ nav a:hover {
   bottom: 0;
   right: 0;
   width: 225px;
+}
+
+.projects {
+  text-align: center;
+  max-width: 1200px;
+  margin: 96px auto;
+}
+
+.projects h1 {
+  color: #0b2545;
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.projects .line {
+  background-color: #364c84;
+  height: 1px;
+  width: 80%;
+  margin: 28px auto 56px auto;
+}
+
+.project-grid {
+  display: flex;
+  justify-content: center;
+  gap: 36px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+.project-card {
+  width: 30%;
+  height: 250px;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  margin: 0;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  background-color: #333;
+  transition: transform 0.3s ease-in-out;
+}
+
+.project-card:hover {
+  transform: scale(1.05);
+}
+
+.project-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.project-card:hover img {
+  opacity: 0.4;
+}
+
+.project-card figcaption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px;
+  box-sizing: border-box;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent);
+  color: white;
+  transform: translateY(100%);
+  opacity: 0;
+  transition: transform 0.4s ease-out, opacity 0.4s ease-out;
+  text-align: left;
+  font-size: 0.85rem;
+}
+
+.project-card:hover figcaption {
+  transform: translateY(0);
+  opacity: 1;
 }
