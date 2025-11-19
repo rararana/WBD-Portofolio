@@ -7,8 +7,13 @@ body {
   background-color: #f8f6f0;
   margin: 0;
   padding: 0;
-  min-height: 100vh;
   overflow-x: hidden;
+}
+
+.hero-wrapper {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr;
 }
 
 nav {
@@ -28,7 +33,6 @@ nav .menu {
 nav a {
   text-decoration: none;
   color: #364c84;
-  font-size: small;
   font-weight: 500;
   letter-spacing: 1px;
   transition: transform 0.2s ease;
@@ -43,6 +47,7 @@ nav .line {
 
 nav a:hover {
   transform: scale(1.1);
+  font-weight: 600;
 }
 
 .name-page {
@@ -52,27 +57,79 @@ nav a:hover {
   height: auto;
 }
 
-.bottom-border {
-  margin-top: 96px;
+#projects,
+#about {
+  scroll-margin-top: 60px;
+}
+
+#hero {
+  height: 100%;
   position: relative;
-  width: 100%;
+  text-align: center;
+  overflow: hidden;
 }
 
-.flower-left {
+#hero-content {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 225px;
+  left: 50%;
+  bottom: 25%;
+  transform: translateX(-50%);
+  width: auto;
 }
 
+.name {
+  position: relative;
+  display: inline-block;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.name .flower-center {
+  display: block;
+  max-width: 360px;
+  height: auto;
+  /* animation: spin 120s infinite; */
+}
+
+.name h1 {
+  position: absolute;
+  top: 43%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  color: #171749;
+  font-weight: 800;
+  background-color: #f8f6f0;
+  padding: 5px 10px;
+  letter-spacing: 3px;
+}
+
+.flower-left,
 .flower-right {
   position: absolute;
   bottom: 0;
+  max-width: 25%;
+  height: auto;
+  z-index: 10;
+}
+
+.flower-left {
+  left: 0;
+}
+
+.flower-right {
   right: 0;
-  width: 225px;
 }
 
 #projects {
+  height: 100vh;
   text-align: center;
   max-width: 1200px;
   margin: 120px auto;
@@ -154,6 +211,7 @@ nav a:hover {
   max-width: 825px;
   margin: 96px auto;
   padding: 0 20px;
+  height: 100vh;
 }
 
 #about .line-top {
@@ -172,6 +230,7 @@ nav a:hover {
 
 .about-text {
   flex: 1;
+  -webkit-text-stroke: 0.4px;
   color: #171749;
 }
 
@@ -222,7 +281,7 @@ nav a:hover {
   height: 100%;
   object-fit: cover;
   z-index: 0;
-  opacity: 0.45;
+  opacity: 0.25;
 }
 
 #experiences::before {
@@ -234,7 +293,7 @@ nav a:hover {
   bottom: 0;
   background-color: #95b1ee;
   z-index: 1;
-  opacity: 0.65;
+  opacity: 0.35;
 }
 
 .content-container {
